@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+# ignoring warning from pods
+inhibit_all_warnings!
+
+target "PhotoBrowserDemo" do
+
+pod 'AFNetworking'
+pod 'DACircularProgress'
+pod 'pop'
+
+end
