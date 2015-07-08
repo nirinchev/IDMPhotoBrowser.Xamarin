@@ -1,6 +1,3 @@
-﻿using System;
-
-namespace IDMPhotoBrowser.Xamarin
+﻿namespace IDMPhotoBrowserBinding
 {
 }
-

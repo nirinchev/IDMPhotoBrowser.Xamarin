@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{9E725F12-8A4A-422F-875F-58B8D1901BD0}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>IDMPhotoBrowser.Xamarin</RootNamespace>
+    <RootNamespace>IDMPhotoBrowserBinding</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>IDMPhotoBrowser.Xamarin</AssemblyName>
+    <AssemblyName>IDMPhotoBrowserBindings</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,6 +39,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AFNetworking.linkwith.cs">
+      <DependentUpon>AFNetworking.a</DependentUpon>
+    </Compile>
+    <Compile Include="DACircularProgress.linkwith.cs">
+      <DependentUpon>DACircularProgress.a</DependentUpon>
+    </Compile>
+    <Compile Include="Pop.linkwith.cs">
+      <DependentUpon>Pop.a</DependentUpon>
+    </Compile>
+    <Compile Include="IDMPhotoBrowser.linkwith.cs">
+      <DependentUpon>IDMPhotoBrowser.a</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
@@ -47,4 +59,30 @@
     <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="..\Output\AFNetworking.a">
+      <Link>AFNetworking.a</Link>
+    </ObjcBindingNativeLibrary>
+    <ObjcBindingNativeLibrary Include="..\Output\DACircularProgress.a">
+      <Link>DACircularProgress.a</Link>
+    </ObjcBindingNativeLibrary>
+    <ObjcBindingNativeLibrary Include="..\Output\Pop.a">
+      <Link>Pop.a</Link>
+    </ObjcBindingNativeLibrary>
+    <ObjcBindingNativeLibrary Include="..\Output\IDMPhotoBrowser.a">
+      <Link>IDMPhotoBrowser.a</Link>
+    </ObjcBindingNativeLibrary>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\de.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\en.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\fr.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\pt.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\ru.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPBLocalizations.bundle\zh-Hans.lproj\Localizable.strings" />
+    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowLeft.png" />
+    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowLeft%402x.png" />
+    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowRight.png" />
+    <BundleResource Include="Resources\IDMPhotoBrowser.bundle\images\IDMPhotoBrowser_arrowRight%402x.png" />
+  </ItemGroup>
 </Project>
