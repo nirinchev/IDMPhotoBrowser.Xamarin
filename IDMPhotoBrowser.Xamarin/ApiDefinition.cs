@@ -1,6 +1,7 @@
 ﻿using System;
 using Foundation;
 using UIKit;
+using ObjCRuntime;
 
 namespace IDMPhotoBrowserBinding
 {
@@ -31,5 +32,18 @@ namespace IDMPhotoBrowserBinding
 
 		[Export ("scaleImage")]
 		UIImage ScaleImage { get; set; }
+
+		[Wrap ("WeakDelegate")]
+		IDMPhotoBrowserDelegate Delegate { get; set; }
+
+		[NullAllowed, Export ("delegate", ArgumentSemantic.Assign)]
+		NSObject WeakDelegate { get; set; }
+	}
+
+	[Model, Protocol, BaseType (typeof (NSObject))]
+	interface IDMPhotoBrowserDelegate
+	{
+		[Export ("photoBrowser:didDismissAtPageIndex:")]
+		void OnDismissed (IDMPhotoBrowser controller, nuint index);
 	}
 }
