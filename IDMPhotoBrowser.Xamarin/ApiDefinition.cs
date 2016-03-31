@@ -11,8 +11,14 @@ namespace IDMPhotoBrowserBinding
 		[Export ("initWithURL:")]
 		IntPtr Constructor (NSUrl url);
 
+		[Export ("initWithImage:")]
+		IntPtr Constructor (UIImage image);
+
 		[Export ("caption")]
 		string Caption { get; set; }
+
+		[Export ("placeholderImage")]
+		UIImage Placeholder { get; set; }
 	}
 
 	[BaseType (typeof (UIViewController))]
